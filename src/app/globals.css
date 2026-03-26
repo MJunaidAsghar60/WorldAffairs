@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #080b14;
+  --bg-secondary: #0d1117;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2235;
+  --border-subtle: #1f2937;
+  --border-default: #374151;
+  --border-focus: #6366f1;
+  --indigo-soft: #818cf8;
+  --indigo-vivid: #6366f1;
+  --indigo-glow: #4f46e5;
+  --cyan-soft: #67e8f9;
+  --cyan-vivid: #22d3ee;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #6b7280;
+  --text-accent: #818cf8;
+  --gradient-hero: linear-gradient(135deg, #080b14 0%, #0f172a 50%, #080b14 100%);
+  --gradient-card: linear-gradient(135deg, #111827, #1a2235);
+  --gradient-brand: linear-gradient(90deg, #6366f1, #22d3ee);
+  --gradient-warm: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #22d3ee 100%);
+  --glow-indigo: 0 0 40px rgba(99, 102, 241, 0.15);
+  --glow-cyan: 0 0 40px rgba(34, 211, 238, 0.1);
+  --font-inter: 'Inter', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+/* Glow effect */
+.glow-indigo {
+  box-shadow: var(--glow-indigo);
+}
+
+.glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--indigo-soft);
+}
+
+/* Metric bar animation */
+@keyframes barGrow {
+  from { width: 0%; }
+  to { width: var(--target-width); }
+}
